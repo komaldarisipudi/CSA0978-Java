@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Mulmatrices {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int r = scan.nextInt(); 
+        int c = scan.nextInt(); 
+        int mat1[][] = new int[r][c];
+        int mat2[][] = new int[r][c];
+        System.out.println("Enter elements of matrix 1:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                mat1[i][j] = scan.nextInt();
+            }
+        }
+        System.out.println("Enter elements of matrix 2:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                mat2[i][j] = scan.nextInt();
+            }
+        }
+        int sum[][] = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                sum[i][j] = 0;
+                for (int k = 0; k < c; k++) {
+                    sum[i][j] += mat1[i][k] * mat2[k][j];
+                }
+            }
+        }
+        System.out.println("Product of the matrices:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+        scan.close();
+    }
+}
