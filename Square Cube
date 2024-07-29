@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class SquareCube {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Scanner input=new Scanner(System.in); 
+        System.out.print("Enter numbner: ");
+        float n=input.nextFloat(); 
+System.out.print("\nsquare: "+(n*n)); 
+System.out.print("\ncube: "+(n*n*n));
+    }
+}
