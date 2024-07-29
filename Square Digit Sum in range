@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class SquareDigitSum {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the lower bound: ");
+        int lower = input.nextInt();
+        System.out.print("Enter the upper bound: ");
+        int upper = input.nextInt();
+        int x = 1; 
+        System.out.println("Squares within the range where the sum of digits of the square is less than 10:");
+        while (x * x <= upper) {
+            int y = x * x;
+            if (y >= lower && y <= upper) {
+                int sum = 0;
+                int temp = y;
+                while (temp != 0) {
+                    int rem = temp % 10;
+                    sum += rem;
+                    temp /= 10;
+                }
+                if (sum < 10) {
+                    System.out.print(y + " ");
+                }
+            }
+            x++;
+        }
+        input.close();
+    }
+}
